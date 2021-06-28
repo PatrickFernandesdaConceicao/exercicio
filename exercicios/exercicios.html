@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        /*porcentagem normal*/
+    function porcentagem(valorTotal, porcentagem){
+        var umPorCento = valorTotal/100
+        var resultadoFinal = umPorCento * porcentagem;
+        document.write(resultadoFinal)
+    }  
+
+    /*representação de porcentagem*/   
+
+    function representacaoPorcentagem(valorTotal,porcentagem){
+        var umPorCento = valorTotal/100
+        var resultado = porcentagem/umPorCento
+        document.write(resultado + '%')
+
+    }
+
+    /*multiplicação cruzada*/
+
+    function multiplicacaoCruzada(numerador,denominador,resposta){/*se quiser que o valor Final seja escrido é só referenciar a varíavel resposta como tendo o valor 1*/
+        var valorTotal = numerador*100;
+        var respostaFinal = valorTotal/denominador;
+        if (resposta === 1){
+            document.write(respostaFinal)
+        }
+    }
+    </script>
+
+
+    <p>25 representa quantos por cento de 200?</p>
+
+    <script>
+        representacaoPorcentagem(200,25)
+    </script>
+
+    <p>30 representa 15% de qual número?</p>
+
+    <script>
+
+        /*para fazer a regra três já que estamos procurando o 100%
+        30/15 x/100
+        30*100
+        x*15
+        */
+        multiplicacaoCruzada(30,15,1);
+    
+    </script>
+
+    <p>Em uma sala de aula há 30 alunos, dos quais 40% são meninas. Quantas meninas têm na sala?</p>
+
+    <script>
+        porcentagem(30,40)
+    </script>
+
+    <p>Convertendo a fração 2 sobre 5 em uma fração centesimal, qual o resultado em porcentagem?</p>
+
+    <script>
+        /*denovo precisamos fazer uma multiplicação cruzada
+        2/5 * x/100
+        2*100
+        5*x
+        */
+
+        multiplicacaoCruzada(2,5,1)
+    </script>
+
+    <p>Para as frações irredutíveis abaixo, determine as porcentagens correspondentes.<br>
+a) 1/5 <br>
+b) 4/5 <br>
+c) 9/20 <br>
+    </p>
+
+    <script>
+       /*a*/
+       multiplicacaoCruzada(1,5,1); document.write('<br>');
+       /*b*/
+       multiplicacaoCruzada(4,5,1); document.write('<br>');
+       /*c*/
+       multiplicacaoCruzada(9,20,1); document.write('<br>');
+    </script>
+
+   <br>
+   <br>
+   <br>
+    <!--bhaskara-->
+    <p>Bhaskara</p>
+
+    <input type="number" id="a" placeholder="valor da a"><br>
+    <input type="number" id="b" placeholder="valor da b"><br>
+    <input type="number" id="c" placeholder="valor da c"><br>
+    <button onclick="calcular()">Calcular</button>
+
+    <script>
+
+    function calcular(){
+        var a = document.getElementById('a').value
+        var b = document.getElementById('b').value
+        var c = document.getElementById('c').value
+
+        var delta = b**2 -4 * a * c
+        
+        if(delta > 0){
+            /*x1*/
+
+            var raiz = Math.sqrt(delta)
+            var x1 = (-b + raiz)/2*a
+            document.write("x1 = " + x1); document.write('<br>')
+            
+            /*x2*/
+
+            var x2 = (-b - raiz)/2*a
+            document.write("x2 = " + x2)
+        } else{
+            document.write("o seu delta é menor que 0, ou seja não há raízes possíveis")
+        }
+    }    
+    </script>
+</body>
+</html>
